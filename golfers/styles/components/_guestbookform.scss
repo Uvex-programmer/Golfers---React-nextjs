@@ -1,0 +1,70 @@
+.chatform {
+  background-color: rgba($color-white, 0.8);
+  border-radius: 2rem;
+  padding: 3rem;
+  box-shadow: 1rem 1rem 2rem rgba(41, 41, 41, 0.699);
+
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 2fr) 1fr;
+  grid-template-rows: auto 2fr auto;
+  row-gap: 4rem;
+  min-width: 40rem;
+  max-width: 60rem;
+  width: 80%;
+  max-height: 60rem;
+
+  justify-content: center;
+  align-items: center;
+
+  &__header {
+    justify-self: center;
+    grid-column: 2/ 4;
+
+    font-size: 2rem;
+  }
+
+  &__container {
+    grid-column: 2/ 4;
+    row-gap: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    height: 3rem;
+    padding: 1rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__textarea {
+    min-height: 10rem;
+    max-height: 15rem;
+    resize: none;
+    padding: 1rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+
+    align-self: flex-start;
+    justify-self: flex-start;
+  }
+}

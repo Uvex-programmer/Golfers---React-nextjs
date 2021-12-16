@@ -1,0 +1,29 @@
+// FONT-SIZE
+$default-font-size: 1.6rem;
+
+// COLOR
+$color-white: #fff;
+$color-black: #000;
+
+$color-primary: #1b1b1b;
+$color-primary-light: #a3a3a34b;
+$color-primary-dark: #313131;
+
+$color-gray-light-1: #f7f7f7;
+$color-gray-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+// MARGINS
+
+$margin-top-large: 6rem;
+$margin-top-medium: 4rem;
+$margin-top-small: 2rem;
+
+//GRID
+
+$page-grid-coloumn-setup: [full-start] 1fr [center-start]
+  repeat(8, [col-start] minmax(min-content, 200px) [col-end]) [center-end] 1fr
+  [full-end];

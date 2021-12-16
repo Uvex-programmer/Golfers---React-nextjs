@@ -10,9 +10,16 @@
 @import 'base/utilities';
 
 // Components
+@import 'components/button';
+@import 'components/playercard';
+@import 'components/guestbook';
+@import 'components/guestbookchat';
+@import 'components/guestbookform';
 
 // Layouts
 @import 'layout/header';
 
 // Pages
 @import 'pages/home';
+@import 'pages/about';
+@import 'pages/guestbook';

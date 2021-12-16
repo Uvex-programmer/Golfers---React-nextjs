@@ -8,6 +8,10 @@
 
 html {
   font-size: 62.5%; // 10 px
+
+  @media screen and (max-width: 800px) {
+    font-size: 50%;
+  }
 }
 
 body {

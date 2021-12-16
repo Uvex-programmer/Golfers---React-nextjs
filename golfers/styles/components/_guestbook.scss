@@ -1,0 +1,17 @@
+.guestbook {
+  grid-column: 2 / 10;
+  justify-self: center;
+
+  height: 100%;
+  width: 80%;
+  display: grid;
+  //grid-template-columns: 1fr 3fr 1fr 3fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  column-gap: 5rem;
+  row-gap: 5rem;
+
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}

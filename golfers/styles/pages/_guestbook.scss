@@ -1,0 +1,28 @@
+.guestbookpage {
+  min-height: 95vh;
+  width: 100%;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-white, 0.7),
+      rgba($color-primary-dark, 0.4) 0.8
+    ),
+    url('https://igp.brightspotcdn.com/dims4/default/3b30c32/2147483647/strip/true/crop/2400x1166+0+92/resize/1926x936!/quality/90/?url=http%3A%2F%2Findigogolf-brightspot.s3.amazonaws.com%2Fclubs%2Fee%2F62%2F35de933d4a6ba86fe33ab178fc86%2Fspring-creek-golf-club-1.jpg');
+
+  background-size: cover;
+  background-position: top;
+  //padding-bottom: 5rem;
+
+  display: grid;
+  grid-template-columns: $page-grid-coloumn-setup;
+  grid-template-rows: 10vh 1fr;
+  row-gap: 2rem;
+
+  &__header {
+    grid-column: 5 / 7;
+    height: 10vh;
+    font-size: 6rem;
+    text-align: center;
+    color: $color-white;
+    text-shadow: 3px 5px black;
+  }
+}

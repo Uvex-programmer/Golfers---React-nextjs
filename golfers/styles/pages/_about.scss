@@ -1,0 +1,46 @@
+.about {
+  width: 100%;
+  min-height: 95vh;
+  padding: 3rem 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(min-content, max-content) 4fr;
+  justify-items: center;
+
+  background-size: cover;
+  //object-fit: cover;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-white, 0.7),
+      rgba($color-primary-dark, 0.4) 0.8
+    ),
+    url('https://www.golfgpsapp.com/wp-content/themes/birdieapps/assets/images/aerial-view-golf-field.jpg');
+
+  &__heading {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 2px 3px black;
+  }
+
+  &__players {
+    height: 80%;
+    width: 80%;
+    @media screen and (min-width: 125em) {
+      width: 60%;
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 2rem;
+      list-style: none;
+      justify-items: center;
+
+      @media screen and (max-width: 68.75em) {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      }
+    }
+  }
+}
