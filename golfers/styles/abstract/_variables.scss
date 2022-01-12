@@ -27,3 +27,6 @@ $margin-top-small: 2rem;
 $page-grid-coloumn-setup: [full-start] 1fr [center-start]
   repeat(8, [col-start] minmax(min-content, 200px) [col-end]) [center-end] 1fr
   [full-end];
+
+//SCREEN SIZE
+$desktop-medium: 68.75em; // 1100px

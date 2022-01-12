@@ -1,0 +1,60 @@
+.clubcard {
+  align-self: center;
+  justify-self: center;
+  height: 80%;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.582);
+  position: relative;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+  &__picture {
+    & img {
+      background-size: cover;
+      background-position: top;
+      height: 14rem;
+      width: 100%;
+      background-blend-mode: overlay;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-black,
+        $color-gray-light-2
+      );
+    }
+  }
+
+  &__heading {
+    position: absolute;
+    top: 30%;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: end;
+    color: $color-white;
+    width: 45%;
+  }
+
+  &__heading-span {
+    padding: 1rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-grey-dark-2, 0.75),
+      rgba($color-grey-dark-3, 0.75)
+    );
+  }
+
+  &__details {
+    color: $color-white;
+    height: auto;
+    font-size: $default-font-size;
+    margin-top: 2rem;
+    padding: 2rem;
+  }
+}

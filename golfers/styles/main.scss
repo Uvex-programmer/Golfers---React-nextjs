@@ -11,10 +11,15 @@
 
 // Components
 @import 'components/button';
-@import 'components/playercard';
 @import 'components/guestbook';
 @import 'components/guestbookchat';
 @import 'components/guestbookform';
+@import 'components/fullscreenComponents/twoColTextImg';
+@import 'components/fullscreenComponents/threeColBox';
+
+//Cards
+@import 'components/cards/ClubCard';
+@import 'components/playercard';
 
 // Layouts
 @import 'layout/header';

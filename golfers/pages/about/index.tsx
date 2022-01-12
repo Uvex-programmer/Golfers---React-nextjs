@@ -1,4 +1,4 @@
-import PlayerCard from '../../components/PlayerCard'
+import PlayerCard from '../../components/cards/PlayerCard'
 
 const AboutUs = () => {
   return (
@@ -93,25 +93,25 @@ const AboutUs = () => {
           <PlayerCard
             img={
               'https://www.golfers.nu/____impro/1/Spelare/JTF.jpg?etag=%226d3c-5a8b28a3%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=136%2B142&quality=85'
-              }
+            }
             info={'Proffs'}
           />
           <PlayerCard
             img={
               'https://www.golfers.nu/____impro/1/Spelare/Peter%20N.jpg?etag=%223b55-5aa6c7eb%22&sourceContentType=image%2Fjpeg'
-              }
+            }
             info={'Proffs'}
           />
           <PlayerCard
             img={
               'https://www.golfers.nu/____impro/1/Spelare/MA.jpg?etag=%226feb-5eb99fe1%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=125%2B160&quality=85'
-              }
+            }
             info={'Proffs'}
           />
           <PlayerCard
             img={
               'https://www.golfers.nu/____impro/1/Spelare/LG.jpg?etag=%22a7f1-5eb99fe1%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=180%2B200&extract=28%2B0%2B126%2B160&quality=85'
-              }
+            }
             info={'Proffs'}
           />
         </ul>

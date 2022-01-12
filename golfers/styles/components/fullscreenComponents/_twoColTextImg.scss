@@ -1,0 +1,105 @@
+.TwoColTextImg {
+  grid-column: full-start / full-end;
+  padding: 2rem;
+  padding-bottom: 6rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 70rem));
+  gap: 3rem;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: $desktop-medium) {
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 100rem));
+  }
+
+  &__text {
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr);
+    grid-template-rows: minmax(min-content, 15rem);
+    gap: 2rem;
+
+    padding: 2rem 3rem;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: $desktop-medium) {
+      justify-items: center;
+    }
+
+    & h1 {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+
+    & p {
+      font-size: $default-font-size;
+      align-self: baseline;
+    }
+
+    & a {
+      justify-self: baseline !important;
+      font-size: 1.5rem;
+      border-bottom: 1px solid black;
+      background-image: linear-gradient(to left bottom, #000000, #313131 0.7);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      color: white;
+      align-self: center;
+      @media screen and (max-width: $desktop-medium) {
+        justify-self: center !important;
+      }
+    }
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(min-content, 1fr));
+    grid-template-rows: repeat(7, minmax(min-content, 15px));
+    width: 100%;
+    max-width: 70rem;
+    justify-self: center;
+
+    justify-content: center;
+    align-content: center;
+
+    &:hover .news__img:not(:hover) {
+      transform: scale(0.95);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+
+    box-shadow: 0 2rem 4rem black;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 5px;
+
+    &:hover {
+      transform: scale(1.15);
+      z-index: 10;
+    }
+
+    &--1 {
+      grid-column: 2 / 7;
+      grid-row: 1 / 5;
+    }
+    &--2 {
+      grid-column: 5 / 10;
+      grid-row: 2 / 6;
+    }
+    &--3 {
+      grid-column: 3 / 8;
+      grid-row: 4 / 8;
+    }
+  }
+
+  &__btn {
+  }
+}

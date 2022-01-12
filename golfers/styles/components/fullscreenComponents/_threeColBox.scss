@@ -1,0 +1,22 @@
+.ThreeColBox {
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-primary, 0.3),
+      rgba($color-primary-dark, 0.3) 0.8
+    ),
+    url('https://d3j36fmfb8hh5l.cloudfront.net/content/wp-content/uploads/2018/06/ResortClubhouse_mast_large2.jpg');
+  background-size: cover;
+  background-position: top;
+
+  grid-column: full-start / full-end;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  grid-template-rows: auto 1fr;
+
+  &__heading {
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+  }
+}
