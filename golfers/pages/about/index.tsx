@@ -1,4 +1,4 @@
-import PlayerCard from '../../components/cards/PlayerCard'
+import { PlayerCard } from '../../components'
 
 const AboutUs = () => {
   return (

@@ -1,10 +1,10 @@
 import React from 'react'
-import TopNavbar from './header/TopNavbar'
+import Header from './header/Header'
 
 const Layout = (props: any) => {
   return (
     <div className='container'>
-      <TopNavbar />
+      <Header />
       <main>{props.children}</main>
     </div>
   )

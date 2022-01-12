@@ -1,11 +1,10 @@
 .header {
   display: grid;
-  grid-template-columns: 1fr repeat(5, minmax(min-content, max-content));
+  grid-template-columns: 1fr auto;
   grid-template-rows: 1fr;
   border-bottom: 1px solid rgba($color-white, 0.5);
   padding: 0 2rem;
   color: white;
-  //background-image: linear-gradient(#189de4, #52b7e9);
   background-image: linear-gradient(
     to right bottom,
     $color-primary,
@@ -21,18 +20,104 @@
 
   &__nav {
     display: grid;
-    grid-template-columns: repeat(5, minmax(max-content, 1fr));
+    grid-template-columns: repeat(5, minmax(max-content, auto));
 
     justify-items: center;
     align-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
 
     list-style: none;
     font-size: 1.4rem;
     font-weight: 500;
 
+    @media screen and (max-width: 50em) {
+      display: none !important;
+    }
+
     &-item {
       cursor: pointer;
     }
+  }
+
+  &__nav-menu {
+    display: none !important;
+    position: relative;
+    z-index: 1000;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 50em) {
+      display: grid !important;
+    }
+
+    &--list {
+      display: grid !important;
+      grid-template-columns: 1fr;
+      justify-items: flex-end;
+    }
+
+    &--container {
+      display: grid;
+      grid-template-columns: 11rem;
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: end;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary,
+        $color-primary-dark
+      );
+      position: absolute;
+      top: 70px;
+      right: 0;
+
+      padding: 2rem;
+      margin-top: 1rem;
+      max-width: 21rem;
+      border-radius: 5px;
+
+      -webkit-animation: scale-up-tr 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+        both;
+      animation: scale-up-tr 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
+.scale-up-tr {
+  -webkit-animation: scale-up-tr 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-tr 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes scale-up-tr {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-tr {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
   }
 }
