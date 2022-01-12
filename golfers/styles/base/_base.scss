@@ -29,5 +29,5 @@ a {
 
 .container {
   display: grid;
-  grid-template-rows: 5vh 1fr;
+  grid-template-rows: minmax(5rem, 5vh) 1fr;
 }
