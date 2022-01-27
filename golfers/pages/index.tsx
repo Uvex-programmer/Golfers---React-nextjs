@@ -1,20 +1,13 @@
-import TwoColTextImg from '../components/fullscreenComponents/TwoColTextImg'
-import ThreeColBox from '../components/fullscreenComponents/ThreeColBox'
+import { TwoColTextImg, ThreeColBox, HeroImg, ContactUs } from '../components'
 
 const HomePage = () => {
   return (
     <div className='home'>
-      <figure className='hero'>
-        <img
-          className='hero__img'
-          src='https://www.stonewatergolf.com/images/slideshow/slide1.jpg'
-          alt=''
-        />
-        <figcaption className='hero__caption'>
-          <h1>Golfers!</h1>
-          <h4>Vi är ett gott gäng som gillar att lira golf på söndagar</h4>
-        </figcaption>
-      </figure>
+      <HeroImg
+        heading='Golfers!'
+        text='Vi är ett gott gäng som gillar att lira golf på söndagar'
+        img='https://www.stonewatergolf.com/images/slideshow/slide1.jpg'
+      />
 
       <TwoColTextImg
         imgs={[
@@ -34,14 +27,7 @@ const HomePage = () => {
       />
 
       <ThreeColBox />
-
-      <section className='join'>
-        <div className='join__text'>
-          <h1>Är ni intresserad av Söndagsgänget? </h1>
-          <h2>Hör gärna av er till oss!</h2>
-        </div>
-        <button className='btn btn--white'>Kontakta oss</button>
-      </section>
+      <ContactUs />
     </div>
   )
 }

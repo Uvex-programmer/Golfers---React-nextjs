@@ -3,10 +3,11 @@
   justify-self: center;
   height: 80%;
   width: 80%;
-  background-color: rgba(0, 0, 0, 0.582);
+  max-width: 35rem;
+  background-color: rgba(0, 0, 0, 0.747);
   position: relative;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 
   &__picture {
     & img {
@@ -54,7 +55,7 @@
     color: $color-white;
     height: auto;
     font-size: $default-font-size;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     padding: 2rem;
   }
 }
