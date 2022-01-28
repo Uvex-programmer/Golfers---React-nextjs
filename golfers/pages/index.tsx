@@ -1,6 +1,19 @@
 import { TwoColTextImg, ThreeColBox, HeroImg, ContactUs } from '../components'
+import { GetStaticProps, NextPage } from 'next'
 
-const HomePage = () => {
+interface Golfclub {
+  image: string
+  url: string
+}
+interface Golfclubs {
+  gulfclubs: [Golfclub]
+}
+
+interface GolfclubProps {
+  golfclubs: Golfclubs
+}
+
+const HomePage: NextPage<GolfclubProps> = (props) => {
   return (
     <div className='home'>
       <HeroImg
@@ -33,3 +46,17 @@ const HomePage = () => {
 }
 
 export default HomePage
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  let res = await fetch('http://localhost:3000/api/golfclub', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  const golfclubs = (await res.json()) as Golfclubs
+
+  return {
+    props: { golfclubs: golfclubs }, // will be passed to the page component as props
+  }
+}

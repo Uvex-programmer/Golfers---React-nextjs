@@ -29,8 +29,7 @@ model Golfclub {
   updatedAt DateTime @updatedAt
   image String
   url String @unique
-  description String
-  
+  name String? @unique
 }
 
 //Create ENUMS
