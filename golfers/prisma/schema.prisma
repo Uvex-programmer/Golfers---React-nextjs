@@ -11,14 +11,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
+// User model
 model User {
   id String @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   email String @unique
   image String?
+  Handicap Int?
   role Role @default(USER)
+}
+
+//Golfclub model
+model Golfclub {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  image String
+  url String @unique
+  description String
+  
 }
 
 //Create ENUMS
