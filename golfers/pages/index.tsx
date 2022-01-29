@@ -1,19 +1,18 @@
-import { TwoColTextImg, ThreeColBox, HeroImg, ContactUs } from '../components'
+import {
+  TwoColTextImg,
+  GolfclubsSlide,
+  HeroImg,
+  ContactUs,
+} from '../components'
 import { GetStaticProps, NextPage } from 'next'
-
-interface Golfclub {
-  image: string
-  url: string
-}
-interface Golfclubs {
-  gulfclubs: [Golfclub]
+import { Golfclub } from '../interfaces/interface'
+interface Props {
+  golfclubs: [Golfclub]
 }
 
-interface GolfclubProps {
-  golfclubs: Golfclubs
-}
+const HomePage: NextPage<Props> = (props) => {
+  console.log(props.golfclubs)
 
-const HomePage: NextPage<GolfclubProps> = (props) => {
   return (
     <div className='home'>
       <HeroImg
@@ -39,7 +38,7 @@ const HomePage: NextPage<GolfclubProps> = (props) => {
         button={[true, 'Bosjökloster']}
       />
 
-      <ThreeColBox />
+      <GolfclubsSlide golfclubs={props.golfclubs} />
       <ContactUs />
     </div>
   )
@@ -54,7 +53,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       'Content-Type': 'application/json',
     },
   })
-  const golfclubs = (await res.json()) as Golfclubs
+  const golfclubs = await res.json()
 
   return {
     props: { golfclubs: golfclubs }, // will be passed to the page component as props

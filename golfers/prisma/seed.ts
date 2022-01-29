@@ -5,8 +5,10 @@ const prisma = new PrismaClient()
 async function main() {
   await prisma.golfclub.create({
     data: {
-      image: 'admin2@admin2.com',
-      url: 'https://www.bosjoklosterrrrasdsa.se/',
+      image:
+        'https://www.golfpaket.se/wp-content/uploads/bild-bosjokloster-golfklubb-1.jpg',
+      url: 'https://www.bosjokloster.se/',
+      name: 'Bosjökloster',
     },
   })
 }

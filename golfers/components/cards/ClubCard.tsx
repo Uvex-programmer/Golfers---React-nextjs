@@ -1,25 +1,25 @@
-type Props = {
-  club: {
-    img: string
-    club: string
-    text: string
-  }
+import { Golfclub } from '../../interfaces/interface'
+
+interface Props {
+  club: Golfclub
 }
 
 const ClubCard: React.FC<Props> = (props) => {
+  const navigateUrl = () => {
+    const url: string = props.club.url
+    window.location.href = `${url}`
+  }
+
   return (
-    <div className='clubcard'>
+    <div className='clubcard' onClick={navigateUrl}>
       <div className='clubcard__picture'>
-        <img src={props.club.img} alt='' />
+        <img src={props.club.image} alt='' />
       </div>
       <h4 className='clubcard__heading'>
         <span className='clubcard__heading-span'>
-          {props.club.club} Golfklubb
+          {props.club.name} Golfklubb
         </span>
       </h4>
-      <div className='clubcard__details'>
-        <p>{props.club.text}</p>
-      </div>
     </div>
   )
 }

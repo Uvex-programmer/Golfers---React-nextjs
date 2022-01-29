@@ -1,23 +1,25 @@
 .clubcard {
   align-self: center;
   justify-self: center;
-  height: 80%;
+  height: 60%;
   width: 80%;
   max-width: 35rem;
-  background-color: rgba(0, 0, 0, 0.747);
+  background-color: rgba(34, 33, 33, 0.747);
   position: relative;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  cursor: pointer;
 
   &__picture {
+    height: 100%;
     & img {
-      background-size: cover;
       background-position: top;
-      height: 14rem;
+      object-fit: cover;
+      height: 100%;
       width: 100%;
       background-blend-mode: overlay;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      // -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+      // clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
       background-image: linear-gradient(
@@ -30,7 +32,7 @@
 
   &__heading {
     position: absolute;
-    top: 30%;
+    top: 50%;
     font-size: 1.8rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -57,5 +59,9 @@
     font-size: $default-font-size;
     margin-top: 0.5rem;
     padding: 2rem;
+  }
+
+  &:hover {
+    transform: scale(1.3s);
   }
 }
