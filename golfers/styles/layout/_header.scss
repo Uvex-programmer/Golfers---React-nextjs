@@ -19,11 +19,9 @@
   }
 
   &__nav {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(max-content, auto));
-
+    display: flex;
     justify-items: center;
-    align-content: center;
+    align-items: center;
     gap: 1.5rem;
 
     list-style: none;
@@ -36,6 +34,14 @@
 
     &-item {
       cursor: pointer;
+
+      &--white {
+        background-color: white;
+        color: black;
+        width: 8rem;
+        text-align: center;
+        
+      }
     }
   }
 
