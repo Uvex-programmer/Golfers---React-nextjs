@@ -1,6 +1,6 @@
 .guestbookpage {
-  min-height: 95vh;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
   background-image: linear-gradient(
       to bottom right,
       rgba($color-white, 0.7),
@@ -10,19 +10,17 @@
 
   background-size: cover;
   background-position: top;
-  //padding-bottom: 5rem;
-
-  display: grid;
-  grid-template-columns: $page-grid-coloumn-setup;
-  grid-template-rows: 10vh 1fr;
-  row-gap: 2rem;
+  align-items: center;
+  justify-items: center;
 
   &__header {
-    grid-column: 5 / 7;
-    height: 10vh;
-    font-size: 6rem;
-    text-align: center;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    font-size: 4rem;
+
     color: $color-white;
-    text-shadow: 3px 5px black;
+    text-shadow: 2px 3px black;
   }
 }

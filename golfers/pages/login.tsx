@@ -2,7 +2,7 @@ import Card from '../components/cards/ModalCard'
 import LoginForm from '../components/form/LoginForm'
 
 const LoginPage: React.FC = () => (
-  <div className='loginPage'>
+  <div className='loginPage page'>
     <Card
       alt='login page'
       imageSrc={

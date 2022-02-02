@@ -21,6 +21,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
       let messages = await prisma.bookMessage.findMany({
+        orderBy: [
+          {
+            createdAt: 'desc',
+          },
+        ],
         select: {
           createdAt: true,
           name: true,

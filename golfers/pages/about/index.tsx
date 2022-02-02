@@ -2,7 +2,7 @@ import { PlayerCard } from '../../components'
 
 const AboutUs = () => {
   return (
-    <div className='about'>
+    <div className='about page'>
       <h1 className='about__heading'>SÖNDAGSGÄNGET</h1>
       <div className='about__players'>
         <ul className='about__players-list'>

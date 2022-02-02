@@ -2,7 +2,7 @@ import Card from '../components/cards/ModalCard'
 import RegisterForm from '../components/form/RegisterForm'
 
 const SignupPage: React.FC = () => (
-  <div className='registerPage'>
+  <div className='registerPage page'>
     <Card
       alt='signup page'
       imageSrc={
