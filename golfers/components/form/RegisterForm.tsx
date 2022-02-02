@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Input from './components/Input'
 import InlineLink from './components/InlineLink'
 import Button from '../buttons/Button'
+import { validateEmail, validatePassword } from '../../utils/auth'
 
 const registerForm = () => {
   const [username, setUsername] = useState('')
@@ -9,40 +10,29 @@ const registerForm = () => {
   const [pwErr, setPwErr] = useState(false)
   const [pw, setPw] = useState('')
 
-  const handleSubmit = () => {
-    console.log('submit', username, 'pw: ', pw)
-  }
-
-  const validateEmail = (email: string) => {
-    if (email.length < 1) {
-      setEmailErr(false)
-      return
-    }
-    const EMAIL_REGEX = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}')
-
-    let check = EMAIL_REGEX.test(email)
-    check ? setEmailErr(false) : setEmailErr(true)
-  }
-
-  const validatePw = (pw: string) => {
-    if (pw.length < 1) {
-      setPwErr(false)
-      return
-    }
-    const PW_REGEX = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})')
-
-    let show = PW_REGEX.test(pw)
-    show ? setPwErr(false) : setPwErr(true)
+  const handleSubmit = async () => {
+    // if (!username || !pw || pwErr || emailErr) return
+    await fetch('/api/auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: username, pw: pw }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
   }
 
   const onChange = (value: string, type: string) => {
     if (type === 'password') {
       setPw(value)
-      validatePw(value)
+      let checkPW = validatePassword(value)
+      setPwErr(checkPW)
       return
     }
     setUsername(value)
-    validateEmail(value)
+    let checkEmail = validateEmail(value)
+    setEmailErr(checkEmail)
   }
 
   return (

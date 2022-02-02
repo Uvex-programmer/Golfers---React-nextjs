@@ -1,4 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import {
+  validateEmail,
+  validatePassword,
+  hashPassword,
+} from '../../../utils/auth'
 import prisma from '../../../prisma/prisma'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -18,20 +23,38 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     case 'POST':
       try {
         const { email, pw } = req.body
-        if (!EMAIL_REGEX.test(email) || !PW_REGEX.test(pw)) {
+
+        if (validateEmail(email) === true || validatePassword(pw) === true) {
           res.status(422).json({ message: 'bad input' })
           return
         }
 
-        prisma.user.create({
-          data: {
+        let checkIfUserExists = await prisma.user.findFirst({
+          where: {
             email: email,
           },
         })
+
+        if (checkIfUserExists) {
+          res.json({ message: 'user already exists' })
+          console.log('already exists')
+
+          return
+        }
+
+        const hashedPassword = await hashPassword(pw)
+
+        let ress = await prisma.user.create({
+          data: {
+            email: email,
+            password: hashedPassword,
+          },
+        })
+        res.json(ress)
       } catch (error: any) {
         res.send(error)
       }
-      breakmessage: 'bad input'
+      break
     default:
       break
   }
