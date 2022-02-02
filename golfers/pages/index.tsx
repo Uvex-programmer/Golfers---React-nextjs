@@ -6,6 +6,7 @@ import {
 } from '../components'
 import { GetStaticProps, NextPage } from 'next'
 import { Golfclub } from '../interfaces/interface'
+import prisma from '../prisma/prisma'
 interface Props {
   golfclubs: [Golfclub]
 }
@@ -47,13 +48,13 @@ const HomePage: NextPage<Props> = (props) => {
 export default HomePage
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  let res = await fetch('http://localhost:3000/api/golfclub', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
+  let golfclubs = await prisma.golfclub.findMany({
+    select: {
+      url: true,
+      image: true,
+      name: true,
     },
   })
-  const golfclubs = await res.json()
 
   return {
     props: { golfclubs: golfclubs }, // will be passed to the page component as props

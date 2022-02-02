@@ -1,11 +1,15 @@
 import GuestBookChat from './GuestBookChat'
 import GuestBookForm from './GuestBookForm'
+import { Message } from '../../interfaces/interface'
 
-const GuestBook: React.FC = () => {
+interface Props {
+  messages: [Message]
+}
+const GuestBook: React.FC<Props> = (props) => {
   return (
     <div className='guestbook'>
       <GuestBookForm />
-      <GuestBookChat />
+      <GuestBookChat messages={props.messages} />
     </div>
   )
 }

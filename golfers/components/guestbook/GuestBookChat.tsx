@@ -1,31 +1,20 @@
-const GuestBookChat: React.FC = () => {
+import { Message } from '../../interfaces/interface'
+interface Props {
+  messages: [Message]
+}
+
+const GuestBookChat: React.FC<Props> = (props) => {
   return (
     <div className='guestchat'>
-      <div className='message'>
-        <p>2021-12-08</p>
-        <h3>lirem oindodsfn fdsoim apso mvfdib ifd ifdvm </h3>
-        <h3>moidsfm iosdmf oisdmf oisdmf</h3>
-      </div>
-      <div className='message'>
-        <p>2021-12-08</p>
-        <h3>lirem oindodsfn fdsoim apso mvfdib ifd ifdvm </h3>
-        <h3>moidsfm iosdmf oisdmf oisdmf</h3>
-      </div>
-      <div className='message'>
-        <p>2021-12-08</p>
-        <h3>lirem oindodsfn fdsoim apso mvfdib ifd ifdvm </h3>
-        <h3>moidsfm iosdmf oisdmf oisdmf</h3>
-      </div>
-      <div className='message'>
-        <p>2021-12-08</p>
-        <h3>lirem oindodsfn fdsoim apso mvfdib ifd ifdvm </h3>
-        <h3>moidsfm iosdmf oisdmf oisdmf</h3>
-      </div>
-      <div className='message'>
-        <p>2021-12-08</p>
-        <h3>lirem oindodsfn fdsoim apso mvfdib ifd ifdvm </h3>
-        <h3>moidsfm iosdmf oisdmf oisdmf</h3>
-      </div>
+      {props.messages.map((msg, index) => {
+        return (
+          <div className='message' key={index}>
+            <p>{msg.createdAt}</p>
+            <h3>{msg.name}</h3>
+            <h3>{msg.text}</h3>
+          </div>
+        )
+      })}
     </div>
   )
 }

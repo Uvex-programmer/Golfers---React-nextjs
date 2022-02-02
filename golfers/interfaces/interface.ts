@@ -6,3 +6,8 @@ export interface Golfclub {
 export interface Golfclubs {
   golfclubs: [Golfclub]
 }
+export interface Message {
+  name: string
+  text: string
+  createdAt: String
+}
