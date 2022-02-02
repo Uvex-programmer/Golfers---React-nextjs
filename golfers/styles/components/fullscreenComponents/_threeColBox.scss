@@ -1,12 +1,12 @@
 .ThreeColBox {
   background-image: linear-gradient(
-      to bottom right,
-      rgba($color-primary, 0.3),
-      rgba($color-primary-dark, 0.3) 0.8
-    ),
-    url('https://d3j36fmfb8hh5l.cloudfront.net/content/wp-content/uploads/2018/06/ResortClubhouse_mast_large2.jpg');
+    to bottom right,
+    rgba($color-primary, 0.5),
+    rgba($color-primary, 0.9) 0.8
+  );
   background-size: cover;
   background-position: top;
+  box-shadow: 0px 5px 15px 5px black;
 
   grid-column: full-start / full-end;
   min-height: 40rem;
@@ -15,9 +15,19 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(min-content, 1fr));
   grid-template-rows: auto 1fr;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(3, minmax(min-content, 20rem));
+  }
 
   &__heading {
     grid-row: 1 / 2;
     grid-column: 1 / 4;
+
+    @media screen and (max-width: 600px) {
+      grid-column: 1 / 2;
+      height: auto;
+      margin-bottom: 4rem;
+    }
   }
 }
