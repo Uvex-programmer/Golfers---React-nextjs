@@ -18,6 +18,16 @@
 @import 'components/fullscreenComponents/threeColBox';
 @import 'components/contact/contactUs';
 @import 'components/heroimg';
+@import 'components/modals/modalCard';
+@import 'components/imageLoader';
+
+// Form
+@import 'components/form/form';
+@import 'components/form/userForm';
+
+// Buttons
+@import 'components/buttons/closeModalBtn';
+@import 'components/buttons/buttonModal';
 
 //Cards
 @import 'components/cards/ClubCard';
@@ -30,3 +40,5 @@
 @import 'pages/home';
 @import 'pages/about';
 @import 'pages/guestbook';
+@import 'pages/login';
+@import 'pages/register';

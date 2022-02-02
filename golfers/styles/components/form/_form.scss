@@ -1,0 +1,77 @@
+.navigate {
+  color: rgb(32, 227, 178);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  outline: none;
+  border-bottom: 3px solid transparent;
+
+  &:hover {
+    filter: hue-rotate(10deg) brightness(120%) saturate(180%);
+  }
+
+  &:focus {
+    border-bottom: 3px solid;
+    padding-bottom: 0.1em;
+  }
+}
+
+.input {
+  display: grid;
+  gap: 0.4em;
+
+  &__error {
+    background-color: rgba(0, 0, 0, 0.541);
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+  }
+}
+
+.mainInput {
+  border-radius: 5px;
+
+  outline: none;
+  padding: 0.5em 0.6em;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  width: 100%;
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+}
+
+.textTitle {
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+
+  @media (max-width: 450px) {
+    font-size: 28px;
+  }
+}
+
+.textSubtitle {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.textDark {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 130%;
+}
+
+.textLight {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.7);
+}

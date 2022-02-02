@@ -1,0 +1,33 @@
+.modalBtn {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  height: 30px;
+  outline: none;
+  padding: 0.5em 0.6em;
+
+  background: linear-gradient(
+    to bottom right,
+    rgb(12, 235, 235) 0%,
+    rgb(32, 227, 178) 100%
+  );
+
+  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  width: 170px;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 40px,
+      rgba(0, 0, 0, 0.3) 0px 0px 0px 0.5px inset,
+      rgba(0, 0, 0, 0.1) 0px 10px 40px inset;
+    filter: hue-rotate(10deg) brightness(120%) saturate(180%);
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: rgba(12, 235, 235, 0.3) 0px 10px 40px,
+      rgb(32, 227, 178) 0px 0px 0px 1px inset;
+    color: white;
+  }
+}

@@ -1,0 +1,15 @@
+.registerPage {
+  min-height: 95vh;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-gray-light-1, 0.4),
+      rgba($color-gray-light-2, 0.2) 0.8
+    ),
+    url('https://golftravellux.com/wp-content/uploads/2021/06/Finca-Cortesin-Hotel-Luxury-Golf-Holiday-Spain-3.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

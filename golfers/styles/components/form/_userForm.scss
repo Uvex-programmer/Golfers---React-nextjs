@@ -1,0 +1,37 @@
+.userForm {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    width: 100%;
+    padding: 1rem;
+    align-content: center;
+    display: grid;
+    gap: 1.5em;
+    grid-template-rows: repeat(3, min-content);
+    height: 100%;
+    width: 35rem;
+
+    @media screen and (max-width: 340px) {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    display: grid;
+    gap: 0.2em;
+  }
+
+  &__inputContainer {
+    display: grid;
+    gap: 1em;
+  }
+
+  &__extraContainer {
+    display: grid;
+    gap: 0.5em;
+    grid-template-rows: repeat(2, min-content);
+  }
+}

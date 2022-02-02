@@ -5,6 +5,13 @@ $default-font-size: 1.6rem;
 $color-white: #fff;
 $color-black: #000;
 
+$color-green-1: #20e3b2;
+$green-background: linear-gradient(
+  to bottom right,
+  rgb(12, 235, 235) 0%,
+  rgb(32, 227, 178) 100%
+);
+
 $color-primary: #1b1b1b;
 $color-primary-light: #a3a3a34b;
 $color-primary-dark: #313131;
