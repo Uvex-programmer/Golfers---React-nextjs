@@ -17,7 +17,9 @@ const TopNavbar = () => {
         </li>
         <li className='header__nav-item'>Bokade tider</li>
         <li className='header__nav-item'>Galleri</li>
-        <li className='header__nav-item'>Bli medlem</li>
+        <li className='header__nav-item'>
+          <Link href='/register'>Bli medlem</Link>
+        </li>
         <li className='header__nav-item header__nav-item--green'>
           <Link href='/login'>Logga in</Link>
         </li>

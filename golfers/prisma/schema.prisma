@@ -29,6 +29,14 @@ model Golfclub {
   name String?
 }
 
+// Guestbook message
+model BookMessage {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  name String
+  text String
+}
+
 //Create ENUMS
 enum Role{
   ADMIN
