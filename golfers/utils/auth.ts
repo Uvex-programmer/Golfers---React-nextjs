@@ -1,4 +1,4 @@
-import { hash } from 'bcryptjs'
+import { hash, compare } from 'bcryptjs'
 
 export const validateEmail = (email: string) => {
   if (email.length < 1) {
@@ -25,4 +25,11 @@ export const validatePassword = (pw: string) => {
 export const hashPassword = async (password: string) => {
   let hashedPassword = await hash(password, 12)
   return hashedPassword
+}
+
+export const comparePassword = async (
+  password: string,
+  hashedPassword: string
+) => {
+  return compare(password, hashedPassword)
 }

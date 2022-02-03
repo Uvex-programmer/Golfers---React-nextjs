@@ -7,12 +7,14 @@ import {
 import { GetStaticProps, NextPage } from 'next'
 import { Golfclub } from '../interfaces/interface'
 import prisma from '../prisma/prisma'
+import { useSession } from 'next-auth/react'
 interface Props {
   golfclubs: [Golfclub]
 }
 
 const HomePage: NextPage<Props> = (props) => {
-  console.log(props.golfclubs)
+  const { data: session } = useSession()
+  console.log(session)
 
   return (
     <div className='home'>
@@ -48,13 +50,20 @@ const HomePage: NextPage<Props> = (props) => {
 export default HomePage
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  let golfclubs = await prisma.golfclub.findMany({
-    select: {
-      url: true,
-      image: true,
-      name: true,
+  // let golfclubs = await prisma.golfclub.findMany({
+  //   select: {
+  //     url: true,
+  //     image: true,
+  //     name: true,
+  //   },
+  // })
+  let response = await fetch('http://localhost:3000/api/golfclub', {
+    method: 'GET',
+    headers: {
+      Content: 'application/json',
     },
   })
+  let golfclubs = await response.json()
 
   return {
     props: { golfclubs: golfclubs }, // will be passed to the page component as props
