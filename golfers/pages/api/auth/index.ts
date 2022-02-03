@@ -7,9 +7,6 @@ import {
 import prisma from '../../../prisma/prisma'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const EMAIL_REGEX = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/
-  const PW_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.{8,})/
-
   switch (req.method) {
     case 'GET':
       try {

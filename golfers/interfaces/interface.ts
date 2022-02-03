@@ -11,3 +11,8 @@ export interface Message {
   text: string
   createdAt: String
 }
+
+export interface User {
+  id: string
+  role: string
+}

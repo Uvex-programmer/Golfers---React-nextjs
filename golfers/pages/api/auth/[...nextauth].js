@@ -19,8 +19,6 @@ export default NextAuth({
           },
         })
 
-        console.log(user)
-
         if (!user) {
           throw new Error('No user found!')
         }
@@ -32,7 +30,11 @@ export default NextAuth({
         if (!isValid) {
           throw new Error('Could not login!')
         }
-        return { email: user.email, id: user.id }
+        const data = {
+          id: user.id,
+          role: user.role,
+        }
+        return { data }
       },
     }),
   ],
@@ -45,22 +47,14 @@ export default NextAuth({
   },
   callbacks: {
     jwt: async ({ token, user }) => {
-      // console.log('### JWT CALLBACK ###')
-      // console.log('token: ', token)
-      // console.log('user: ', user)
       if (user) {
-        token.accessToken = user.id
+        token.user = user.data
       }
       return token
     },
 
     session: async ({ session, token, user }) => {
-      // console.log('### SESSION CALLBACK ###')
-      // console.log('session: ', session)
-      // console.log('token: ', token)
-      // console.log('user: ', user)
-
-      session.accessToken = token.accessToken
+      session.user = token.user
 
       return session
     },

@@ -7,7 +7,7 @@ interface Props {
   messages: [Message]
 }
 
-const GuestBookPage: React.FC<Props> = (props) => {
+const GuestBookPage = (props: Props) => {
   return (
     <div className='guestbookpage page'>
       <h1 className='guestbookpage__header'>Gästboken</h1>

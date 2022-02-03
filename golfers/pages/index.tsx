@@ -12,7 +12,7 @@ interface Props {
   golfclubs: [Golfclub]
 }
 
-const HomePage: NextPage<Props> = (props) => {
+const HomePage = (props: Props) => {
   const { data: session } = useSession()
   console.log(session)
 
@@ -47,23 +47,18 @@ const HomePage: NextPage<Props> = (props) => {
   )
 }
 
+HomePage.auth = false
+
 export default HomePage
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  // let golfclubs = await prisma.golfclub.findMany({
-  //   select: {
-  //     url: true,
-  //     image: true,
-  //     name: true,
-  //   },
-  // })
-  let response = await fetch('http://localhost:3000/api/golfclub', {
-    method: 'GET',
-    headers: {
-      Content: 'application/json',
+  let golfclubs = await prisma.golfclub.findMany({
+    select: {
+      url: true,
+      image: true,
+      name: true,
     },
   })
-  let golfclubs = await response.json()
 
   return {
     props: { golfclubs: golfclubs }, // will be passed to the page component as props

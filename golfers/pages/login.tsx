@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 import LoginForm from '../components/form/LoginForm'
 import { getSession } from 'next-auth/react'
 
-const LoginPage: NextPage<any> = ({ session, providers }) => (
+const LoginPage = ({ session, providers }: any) => (
   <div className='loginPage page'>
     {console.log('login page')}
     <Card

@@ -1,16 +1,23 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { getSession } from 'next-auth/react'
 import prisma from '../../../prisma/prisma'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
-      let response = await prisma.golfclub.findMany({
+      const id = req.query.id
+
+      let response = await prisma.user.findFirst({
+        where: {
+          id: id.toString(),
+        },
         select: {
-          url: true,
+          email: true,
           image: true,
-          name: true,
+          Handicap: true,
         },
       })
+
       res.json(response)
     } catch (error: any) {
       res.send(error)
