@@ -1,0 +1,11 @@
+.myProfilePage {
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+
+  &__left-container {
+    grid-column: 1/2;
+    padding-top: 3rem;
+    background-image: linear-gradient(to right bottom, #1b1b1b, #313131 0.7);
+    width: 100%;
+  }
+}

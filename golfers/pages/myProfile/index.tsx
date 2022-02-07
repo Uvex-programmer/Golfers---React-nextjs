@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next'
 import { getSession } from 'next-auth/react'
 import { User } from '../../interfaces/interface'
 import prisma from '../../prisma/prisma'
+import { Sidebar } from '../../components'
 
 interface Props {
   user: User
@@ -11,8 +12,11 @@ function ProfilePage(props: Props) {
   console.log(props)
 
   return (
-    <div className='page'>
-      <p style={{ margin: '0 auto' }}>ProfilePage asdasd ad sada sda asd</p>
+    <div className='myProfilePage page'>
+      <div className='myProfilePage__left-container'>
+        <Sidebar />
+      </div>
+      <div className='myProfilePage__right-container'></div>
     </div>
   )
 }
@@ -30,10 +34,6 @@ export const getServerSideProps: GetServerSideProps = async ({
     return { props: { user: null } }
   }
 
-  // let user = await fetch(`http://localhost:3000/api/user/${session.user.id}`, {
-  //   method: 'GET',
-  //   headers: { 'Content-Type': 'application/json' },
-  // })
   let user = await prisma.user.findUnique({
     where: {
       id: session.user.id,

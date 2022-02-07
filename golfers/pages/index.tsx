@@ -4,18 +4,14 @@ import {
   HeroImg,
   ContactUs,
 } from '../components'
-import { GetStaticProps, NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import { Golfclub } from '../interfaces/interface'
 import prisma from '../prisma/prisma'
-import { useSession } from 'next-auth/react'
 interface Props {
   golfclubs: [Golfclub]
 }
 
 const HomePage = (props: Props) => {
-  const { data: session } = useSession()
-  console.log(session)
-
   return (
     <div className='home'>
       <HeroImg
@@ -61,6 +57,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   })
 
   return {
-    props: { golfclubs: golfclubs }, // will be passed to the page component as props
+    props: { golfclubs: golfclubs },
   }
 }

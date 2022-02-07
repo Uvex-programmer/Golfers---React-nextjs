@@ -1,11 +1,8 @@
 import Card from '../components/cards/ModalCard'
-import { NextPage } from 'next'
 import LoginForm from '../components/form/LoginForm'
-import { getSession } from 'next-auth/react'
 
-const LoginPage = ({ session, providers }: any) => (
+const LoginPage = () => (
   <div className='loginPage page'>
-    {console.log('login page')}
     <Card
       alt='login page'
       imageSrc={
@@ -18,20 +15,3 @@ const LoginPage = ({ session, providers }: any) => (
 )
 
 export default LoginPage
-
-LoginPage.getInitialProps = async (context) => {
-  const { req, res } = context
-  const session = await getSession({ req })
-  console.log('log session', session)
-
-  if (session && res) {
-    res.writeHead(302, {
-      Location: '/',
-    })
-    res.end()
-    return
-  }
-  return {
-    session: undefined,
-  }
-}
